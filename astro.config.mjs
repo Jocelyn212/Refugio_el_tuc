@@ -1,10 +1,17 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
 import tailwindcss from '@tailwindcss/vite';
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
+  // Habilitamos SSR con el adaptador de Vercel
+  output: 'server',
+  adapter: vercel({
+    webAnalytics: {
+      enabled: false
+    }
+  }),
   vite: {
     plugins: [tailwindcss()]
   }
