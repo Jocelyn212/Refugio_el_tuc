@@ -5,7 +5,7 @@ let isConnected = false;
 async function connectDB() {
   if (!isConnected) {
     try {
-      const uri = import.meta.env.MONGO_URI || import.meta.env.MONGODB_URI;
+      const uri = import.meta.env.MONGO_URI || import.meta.env.MONGO_URI;
       
       if (!uri) {
         throw new Error('Variable MONGO_URI no encontrada');
