@@ -1,0 +1,81 @@
+---
+import { checkAuth } from "../middleware.js";
+
+// Verificar si el usuario está autenticado
+let isAuthenticated = false;
+let userData = null;
+
+try {
+  userData = await checkAuth(Astro.request);
+  isAuthenticated = !!userData;
+} catch (error) {
+  console.error("Error checking auth:", error);
+}
+---
+
+<header class="bg-white shadow">
+  <div
+    class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16"
+  >
+    <div class="flex items-center">
+      <a href="/" class="text-xl font-bold text-amber-600">Refugio ElTuc</a>
+    </div>
+    <nav>
+      <ul class="flex space-x-6">
+        <li>
+          <a href="/" class="text-gray-700 hover:text-amber-500"
+            >Quiénes Somos</a
+          >
+        </li>
+        <li>
+          <a href="/adopta" class="text-gray-700 hover:text-amber-500">Adopta</a
+          >
+        </li>
+        <li>
+          <a href="/razas" class="text-gray-700 hover:text-amber-500">Razas</a>
+        </li>
+        <li>
+          <a href="/colabora" class="text-gray-700 hover:text-amber-500"
+            >Colabora</a
+          >
+        </li>
+        <li>
+          <a href="/contacto" class="text-gray-700 hover:text-amber-500"
+            >Contacto</a
+          >
+        </li>
+        {
+          isAuthenticated && (
+            <>
+              <li>
+                <a
+                  href="/admin"
+                  class="text-amber-600 hover:text-amber-700 font-medium"
+                >
+                  Panel Admin
+                </a>
+              </li>
+              <li>
+                <button id="logoutBtn" class="text-red-600 hover:text-red-700">
+                  Cerrar sesión
+                </button>
+              </li>
+            </>
+          )
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Manejar cierre de sesión
+  document.getElementById("logoutBtn")?.addEventListener("click", async () => {
+    try {
+      await fetch("/api/auth/logout");
+      window.location.reload();
+    } catch (error) {
+      console.error("Error al cerrar sesión:", error);
+    }
+  });
+</script>
