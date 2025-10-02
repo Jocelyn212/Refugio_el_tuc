@@ -40,8 +40,8 @@ Refugio ElTuc es una plataforma web desarrollada para gestionar y promocionar la
 │   │   ├── api/         # Endpoints de la API (animales, autenticación)
 │   │   │   ├── auth/    # Endpoints de autenticación
 │   │   │   ├── models/  # Modelos de datos
-│   │   ├── adoptar.astro # Página de adopción
-│   │   ├── animales.astro # Listado de animales
+│   │   ├── adoptar-mascota.astro # Página de adopción individual
+│   │   ├── adopta.astro # Listado de animales
 │   │   └── index.astro  # Página principal
 │   ├── scripts/         # Scripts utilitarios
 │   ├── styles/          # Estilos globales
