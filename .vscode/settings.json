@@ -1,0 +1,24 @@
+{
+    "typescript.validate.enable": false,
+    "typescript.suggest.enabled": false,
+    "javascript.validate.enable": false,
+    "javascript.suggest.enabled": true,
+    "javascript.implicitProjectConfig.checkJs": false,
+    "typescript.implicitProjectConfig.checkJs": false,
+    "js/ts.implicitProjectConfig.checkJs": false,
+    "typescript.preferences.noSemicolons": "off",
+    "javascript.preferences.noSemicolons": "off",
+    "eslint.enable": false,
+    "typescript.surveys.enabled": false,
+    "javascript.suggestionActions.enabled": false,
+    "typescript.suggestionActions.enabled": false,
+    "files.associations": {
+        "*.js": "javascript",
+        "*.mjs": "javascript",
+        "*.astro": "astro"
+    },
+    "emmet.includeLanguages": {
+        "astro": "html"
+    },
+    "astro.typescript.enabled": false
+}
