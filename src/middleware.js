@@ -76,3 +76,27 @@ export function hasRole(user, roles) {
     // Verificar si el rol del usuario está en la lista de roles permitidos
     return allowedRoles.includes(user.role);
 }
+
+/**
+ * Middleware principal de Astro
+ * 
+ * Esta función se ejecuta automáticamente en cada petición HTTP cuando
+ * Astro detecta el archivo middleware.js. Actualmente no intercepta peticiones
+ * pero debe estar presente para que Vercel pueda compilar correctamente.
+ * 
+ * En el futuro se puede usar para:
+ * - Autenticación global automática
+ * - Logging de peticiones
+ * - Redirecciones automáticas
+ * 
+ * Parámetros:
+ * - context: Contexto de Astro con request, cookies, etc.
+ * - next: Función para continuar al siguiente middleware o página
+ * 
+ * Devuelve: La respuesta de continuar con la petición normal
+ */
+export const onRequest = async (context, next) => {
+    // Por ahora solo continúa con la petición normal
+    // En el futuro aquí se pueden añadir verificaciones globales
+    return next();
+};
