@@ -9,9 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "^8.2.8",
+    "@astrojs/vercel": "^8.2.10",
     "@tailwindcss/vite": "^4.1.13",
-    "astro": "^5.13.8",
+    "astro": "^5.14.7",
     "bcryptjs": "^3.0.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.18.2",
