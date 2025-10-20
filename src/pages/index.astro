@@ -1,15 +1,22 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-import Prueba from '../components/Prueba.astro';
-
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Prueba from "../components/Prueba.astro";
 ---
 
-<Layout>
-	<Prueba />
-	
+<Layout title="Quiénes Somos - Refugio ElTuc">
+  <Prueba />
 
+  <div class="container mx-auto py-8 px-4 text-center">
+    <h2 class="text-2xl font-bold mb-6 text-fuchsia-500">
+      Explora nuestro refugio
+    </h2>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a
+        href="/adopta"
+        class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+      >
+        Ver animales en adopción
+      </a>
+    </div>
+  </div>
 </Layout>

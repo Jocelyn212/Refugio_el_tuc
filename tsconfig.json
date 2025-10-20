@@ -3,9 +3,18 @@
   "compilerOptions": {
     "allowJs": true,
     "checkJs": false,
-    "noImplicitAny": false,
-    "strict": false
+    "strict": false,
+    "skipLibCheck": true
   },
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "include": [
+    ".astro/types.d.ts",
+    "**/*.astro"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "**/*.js",
+    "**/*.mjs",
+    "src/**/*.js"
+  ]
 }
