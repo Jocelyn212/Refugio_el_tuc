@@ -84,11 +84,6 @@ export function hasRole(user, roles) {
  * Astro detecta el archivo middleware.js. Actualmente no intercepta peticiones
  * pero debe estar presente para que Vercel pueda compilar correctamente.
  * 
- * En el futuro se puede usar para:
- * - Autenticación global automática
- * - Logging de peticiones
- * - Redirecciones automáticas
- * 
  * Parámetros:
  * - context: Contexto de Astro con request, cookies, etc.
  * - next: Función para continuar al siguiente middleware o página
@@ -96,7 +91,11 @@ export function hasRole(user, roles) {
  * Devuelve: La respuesta de continuar con la petición normal
  */
 export const onRequest = async (context, next) => {
-    // Por ahora solo continúa con la petición normal
-    // En el futuro aquí se pueden añadir verificaciones globales
-    return next();
+    try {
+        // Solo continúa con la petición normal sin ninguna modificación
+        return await next();
+    } catch (error) {
+        console.error("Error en middleware:", error);
+        return await next();
+    }
 };
