@@ -1,7 +1,7 @@
 import { e as createComponent, f as createAstro, h as addAttribute, n as renderHead, o as renderSlot, r as renderTemplate, m as maybeRenderHead, l as renderScript } from './astro/server_DTyRL0dX.mjs';
 /* empty css                              */
 /* empty css                              */
-import { c as checkAuth } from './middleware_XVbAUySc.mjs';
+import { c as checkAuth } from './middleware_98i3sU2U.mjs';
 
 const $$Astro$1 = createAstro();
 const $$AdminLayout = createComponent(($$result, $$props, $$slots) => {

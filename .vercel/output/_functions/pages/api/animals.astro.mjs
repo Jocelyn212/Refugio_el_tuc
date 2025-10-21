@@ -1,4 +1,4 @@
-import { c as connectDB } from '../../chunks/db_Bxg4Ogys.mjs';
+import { c as connectDB } from '../../chunks/db_MaLHCxJ6.mjs';
 import { A as Animal } from '../../chunks/Animal_MzQExhRR.mjs';
 export { renderers } from '../../renderers.mjs';
 

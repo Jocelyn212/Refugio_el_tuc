@@ -1,6 +1,6 @@
-import { c as connectDB } from '../../../chunks/db_Bxg4Ogys.mjs';
+import { c as connectDB } from '../../../chunks/db_MaLHCxJ6.mjs';
 import { U as User } from '../../../chunks/User_DfIrkK66.mjs';
-import { h as hashPassword, g as generateToken, s as setAuthCookie } from '../../../chunks/auth_ClMEOBlK.mjs';
+import { h as hashPassword, g as generateToken, s as setAuthCookie } from '../../../chunks/auth_BUCedew-.mjs';
 export { renderers } from '../../../renderers.mjs';
 
 function json(data, status = 200, headers = {}) {
@@ -12,7 +12,7 @@ function json(data, status = 200, headers = {}) {
     }
   });
 }
-const REGISTRO_SECRETO = "R3fugioElTuc_2025";
+const REGISTRO_SECRETO = process.env.REGISTRO_SECRETO || "R3fugioElTuc_2025";
 async function POST({ request }) {
   try {
     const body = await request.json();

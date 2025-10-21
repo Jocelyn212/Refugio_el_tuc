@@ -6,7 +6,7 @@ async function connectDB() {
     if (isConnected) {
       return;
     }
-    const uri = "mongodb+srv://jocelyncf:idvLvNUj0y9jNQtO@grupoc.myft7qs.mongodb.net/protectora?retryWrites=true&w=majority";
+    const uri = process.env.MONGODB_URI || "mongodb+srv://jocelyncf:idvLvNUj0y9jNQtO@grupoc.myft7qs.mongodb.net/protectora?retryWrites=true&w=majority";
     if (!uri) ;
     await mongoose.connect(uri, {
       bufferCommands: false

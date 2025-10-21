@@ -3,10 +3,10 @@ import bcrypt from 'bcryptjs';
 
 const __vite_import_meta_env__ = {"ASSETS_PREFIX": undefined, "BASE_URL": "/", "DEV": false, "MODE": "production", "PROD": true, "SITE": undefined, "SSR": true};
 function getEnvVariable(name, required = true, defaultValue = null) {
-  const value = Object.assign(__vite_import_meta_env__, { JWT_SECRET: "refugioeltuc_jwt_secret_2025", JWT_EXPIRES_IN: "86400" })[name];
+  const value = Object.assign(__vite_import_meta_env__, { JWT_SECRET: "refugioeltuc_jwt_secret_2025", JWT_EXPIRES_IN: "86400", NODE: process.env.NODE, NODE_ENV: process.env.NODE_ENV })[name];
   if (!value && required) {
     console.error(`Error crítico de seguridad: Variable de entorno ${name} no definida`);
-    if (Object.assign(__vite_import_meta_env__, { JWT_SECRET: "refugioeltuc_jwt_secret_2025", JWT_EXPIRES_IN: "86400" }).PROD) {
+    if (process.env.NODE_ENV === "production") {
       throw new Error("Error de configuración en el servidor. Contacte con el administrador.");
     } else {
       throw new Error(`La variable de entorno ${name} es requerida pero no está definida.`);
