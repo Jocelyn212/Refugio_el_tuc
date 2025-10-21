@@ -40,7 +40,7 @@ function json(data, status = 200, headers = {}) {
 
 // Obtener el código secreto desde las variables de entorno
 // Este código previene que cualquier persona pueda crear cuentas de administrador
-const REGISTRO_SECRETO = import.meta.env.REGISTRO_SECRETO;
+const REGISTRO_SECRETO = process.env.REGISTRO_SECRETO || import.meta.env.REGISTRO_SECRETO;
 
 // Verificar que la variable de entorno existe para evitar problemas de seguridad
 if (!REGISTRO_SECRETO) {

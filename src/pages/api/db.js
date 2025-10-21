@@ -39,9 +39,10 @@ export async function connectDB() {
     }
 
     // Obtener la URI de conexión desde las variables de entorno
-    const uri = import.meta.env.MONGODB_URI;
+    const uri = process.env.MONGODB_URI || import.meta.env.MONGODB_URI;
 
     if (!uri) {
+      console.error("MONGODB_URI no encontrada. Variables disponibles:", Object.keys(process.env).filter(key => key.includes('MONGO')));
       throw new Error("MONGODB_URI no encontrada en las variables de entorno");
     }
 

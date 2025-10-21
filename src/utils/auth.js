@@ -34,7 +34,7 @@ function getEnvVariable(name, required = true, defaultValue = null) {
     if (!value && required) {
         console.error(`Error crítico de seguridad: Variable de entorno ${name} no definida`);
         // En producción, mejor no mostrar qué variable falta exactamente
-        if (import.meta.env.PROD) {
+        if (process.env.NODE_ENV === 'production') {
             throw new Error('Error de configuración en el servidor. Contacte con el administrador.');
         } else {
             throw new Error(`La variable de entorno ${name} es requerida pero no está definida.`);
