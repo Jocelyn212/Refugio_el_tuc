@@ -7,11 +7,7 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
   // Habilitamos SSR con el adaptador de Vercel
   output: 'server',
-  adapter: vercel({
-    webAnalytics: {
-      enabled: false
-    }
-  }),
+  adapter: vercel(),
   vite: {
     plugins: [tailwindcss()]
   }
